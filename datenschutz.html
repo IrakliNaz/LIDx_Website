@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-en="Privacy Policy — LIDx Solutions" data-de="Datenschutz — LIDx Solutions">Privacy Policy — LIDx Solutions</title>
+
+  <style>
+
+    :root {
+      --bg: #050505;
+      --bg-soft: #0b0b0c;
+      --text: #111214;
+      --muted: #666a70;
+      --line: #e8e9eb;
+      --white: #ffffff;
+      --green: #19a866;
+      --max: 1240px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    /* NAVIGATION */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      color: #fff;
+      background: #050505;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav-inner {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 10px;
+      white-space: nowrap;
+      letter-spacing: -.02em;
+      font-weight: 800;
+      font-size: 31px;
+    }
+
+    .logo-lid {
+      display: inline-block;
+      font-size: 125%;
+    }
+
+    .logo-x {
+      font-weight: 400;
+      font-size: 72%;
+      display: inline-block;
+      transform: scaleX(1.4);
+    }
+
+    .logo small {
+      font-size: 31px;
+      letter-spacing: -.02em;
+      font-weight: 300;
+      opacity: .8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+      font-size: 13px;
+      color: rgba(255,255,255,.76);
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    .lang {
+      color: rgba(255,255,255,.8);
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      font: inherit;
+      padding: 0;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* LEGAL PAGE CONTENT */
+    .legal-hero {
+      background: #050505;
+      color: white;
+      padding: 190px 0 70px;
+    }
+
+    .legal-hero .eyebrow {
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: .24em;
+      font-weight: 650;
+      margin-bottom: 18px;
+      color: rgba(255,255,255,.55);
+    }
+
+    .legal-hero h1 {
+      font-size: clamp(36px, 5vw, 54px);
+      letter-spacing: -.03em;
+      font-weight: 650;
+    }
+
+    .legal-content {
+      padding: 70px 0 100px;
+      max-width: 780px;
+      margin-inline: auto;
+    }
+
+    .legal-content h2 {
+      font-size: 20px;
+      letter-spacing: -.01em;
+      margin-top: 42px;
+      margin-bottom: 14px;
+    }
+
+    .legal-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .legal-content p {
+      font-size: 15px;
+      color: #333538;
+      margin-bottom: 14px;
+    }
+
+    .legal-content ul {
+      margin: 0 0 14px 20px;
+      font-size: 15px;
+      color: #333538;
+    }
+
+    .legal-content li {
+      margin-bottom: 6px;
+    }
+
+    .legal-content a {
+      color: var(--text);
+      text-decoration: underline;
+    }
+
+    .legal-content .placeholder {
+      background: #fff6e5;
+      border: 1px solid #f0d9a0;
+      border-radius: 6px;
+      padding: 1px 6px;
+    }
+
+    .legal-note {
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--bg-soft, #f5f5f6);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 36px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      color: white;
+      margin-top: 28px;
+      padding: 70px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 65px;
+    }
+
+    .footer-brand p {
+      margin-top: 25px;
+      max-width: 280px;
+      color: #7e8085;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer .logo {
+      color: white;
+    }
+
+    .footer-col h4 {
+      color: #777a80;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      margin-bottom: 18px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 12px;
+      color: #d4d5d7;
+      margin-bottom: 11px;
+      transition: color .2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #202124;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #66686d;
+      font-size: 10px;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html#home" class="logo" aria-label="LIDx Solutions">
+        <span class="logo-word"><span class="logo-lid">LID</span><span class="logo-x">x</span></span>
+        <small>SOLUTIONS</small>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#home" data-en="Home" data-de="Home">Home</a>
+        <a href="index.html#platforms" data-en="Platforms" data-de="Plattformen">Platforms</a>
+        <a href="index.html#what-we-do" data-en="What We Do" data-de="Was wir tun">What We Do</a>
+        <a href="index.html#about" data-en="About" data-de="Über uns">About</a>
+        <a href="index.html#partners" data-en="Partners" data-de="Partner">Partners</a>
+        <a href="index.html#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <button class="lang" id="langToggle" type="button" aria-label="Switch language">EN⌄</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="legal-hero">
+      <div class="container">
+        <div class="eyebrow" data-en="Legal" data-de="Rechtliches">Legal</div>
+        <h1 data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</h1>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="legal-content">
+
+        <h2 data-en="1. Overview of data protection" data-de="1. Überblick zum Datenschutz">1. Overview of data protection</h2>
+        <p data-en="We take the protection of your personal data very seriously and treat it confidentially and in accordance with the statutory data protection regulations and this privacy policy." data-de="Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst und behandeln sie vertraulich entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.">
+          We take the protection of your personal data very seriously and treat it confidentially and
+          in accordance with the statutory data protection regulations and this privacy policy.
+        </p>
+
+        <h2 data-en="2. Controller" data-de="2. Verantwortliche Stelle">2. Controller</h2>
+        <p data-en="The controller responsible for data processing on this website is:" data-de="Verantwortlich für die Datenverarbeitung auf dieser Website ist:">
+          The controller responsible for data processing on this website is:
+        </p>
+        <p>
+          LIDx Solutions GmbH i. G.<br />
+          Nußzeil 12<br />
+          60433 Frankfurt am Main<br />
+          <span data-en="Germany" data-de="Deutschland">Germany</span><br />
+          <a href="mailto:info@lidx-solutions.de">info@lidx-solutions.de</a>
+        </p>
+
+        <h2 data-en="3. Data collected when visiting this website" data-de="3. Datenerfassung beim Besuch dieser Website">3. Data collected when visiting this website</h2>
+        <p data-en="When you visit this website, our server automatically collects information that your browser transmits, such as browser type, operating system, referrer URL, IP address and the date and time of the request. This data is stored temporarily for technical and security purposes and is not merged with other data sources." data-de="Beim Besuch dieser Website erfasst unser Server automatisch Informationen, die Ihr Browser übermittelt, etwa Browsertyp, Betriebssystem, Referrer-URL, IP-Adresse sowie Datum und Uhrzeit der Anfrage. Diese Daten werden vorübergehend zu technischen und Sicherheitszwecken gespeichert und nicht mit anderen Datenquellen zusammengeführt.">
+          When you visit this website, our server automatically collects information that your browser
+          transmits, such as browser type, operating system, referrer URL, IP address and the date and
+          time of the request. This data is stored temporarily for technical and security purposes and
+          is not merged with other data sources.
+        </p>
+
+        <h2 data-en="4. Contact via email" data-de="4. Kontaktaufnahme per E-Mail">4. Contact via email</h2>
+        <p data-en="If you contact us by email, your details will be stored for the purpose of processing the inquiry and in case of follow-up questions. We do not share this data without your consent." data-de="Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage sowie für mögliche Anschlussfragen gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.">
+          If you contact us by email, your details will be stored for the purpose of processing the
+          inquiry and in case of follow-up questions. We do not share this data without your consent.
+        </p>
+
+        <h2 data-en="5. Cookies" data-de="5. Cookies">5. Cookies</h2>
+        <p data-en="This website may use cookies to make the offering more user-friendly, effective and secure. Where cookies require your consent under applicable law, we obtain this consent via a corresponding banner before they are set." data-de="Diese Website kann Cookies verwenden, um das Angebot nutzerfreundlicher, effektiver und sicherer zu gestalten. Sofern Cookies nach geltendem Recht Ihrer Einwilligung bedürfen, holen wir diese über ein entsprechendes Banner ein, bevor sie gesetzt werden.">
+          This website may use cookies to make the offering more user-friendly, effective and secure.
+          Where cookies require your consent under applicable law, we obtain this consent via a
+          corresponding banner before they are set.
+        </p>
+
+        <h2 data-en="6. Your rights" data-de="6. Ihre Rechte">6. Your rights</h2>
+        <p data-en="You have the right to obtain information about your stored personal data, its origin, its recipients and the purpose of its processing at any time and free of charge, as well as the right to rectification, blocking or deletion of this data and, where applicable, the right to data portability and to lodge a complaint with a supervisory authority." data-de="Sie haben das Recht, jederzeit unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten, gegebenenfalls ein Recht auf Datenübertragbarkeit sowie ein Beschwerderecht bei einer Aufsichtsbehörde.">
+          You have the right to obtain information about your stored personal data, its origin, its
+          recipients and the purpose of its processing at any time and free of charge, as well as the
+          right to rectification, blocking or deletion of this data and, where applicable, the right to
+          data portability and to lodge a complaint with a supervisory authority.
+        </p>
+
+        <h2 data-en="7. Server log files / hosting" data-de="7. Server-Logfiles / Hosting">7. Server log files / hosting</h2>
+        <p data-en="Our hosting provider processes data on our behalf to operate this website reliably and securely. Please add details of your hosting provider and, if applicable, the corresponding order processing agreement (Art. 28 GDPR) here." data-de="Unser Hosting-Anbieter verarbeitet Daten in unserem Auftrag, um diese Website zuverlässig und sicher zu betreiben. Bitte ergänze hier die Angaben zu deinem Hosting-Anbieter sowie gegebenenfalls die zugehörige Auftragsverarbeitungsvereinbarung (Art. 28 DSGVO).">
+          Our hosting provider processes data on our behalf to operate this website reliably and
+          securely. Please add details of your hosting provider and, if applicable, the corresponding
+          order processing agreement (Art. 28 GDPR) here.
+        </p>
+        <p data-en="This website is hosted via GitHub Pages, a service of:" data-de="Diese Website wird über GitHub Pages gehostet, einem Dienst von:">
+          This website is hosted via GitHub Pages, a service of:
+        </p>
+        <p>
+          GitHub, Inc.<br />
+          88 Colin P. Kelly Jr. Street<br />
+          San Francisco, CA 94107<br />
+          <span data-en="USA" data-de="USA">USA</span>
+        </p>
+        <p data-en="Further information on GitHub's data processing can be found in GitHub's own privacy statement." data-de="Weitere Informationen zur Datenverarbeitung durch GitHub finden Sie in der Datenschutzerklärung von GitHub.">
+          Further information on GitHub's data processing can be found in GitHub's own privacy statement.
+        </p>
+
+        <h2 data-en="8. Changes to this privacy policy" data-de="8. Änderungen dieser Datenschutzerklärung">8. Changes to this privacy policy</h2>
+        <p data-en="We reserve the right to adapt this privacy policy so that it always complies with current legal requirements or to reflect changes to our services." data-de="Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen.">
+          We reserve the right to adapt this privacy policy so that it always complies with current
+          legal requirements or to reflect changes to our services.
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-word"><span class="logo-lid">LID</span><span class="logo-x">x</span></span>
+            <small>SOLUTIONS</small>
+          </div>
+
+          <p data-en="LIDx Solutions GmbH is a technology company building and operating digital platforms in commerce, logistics and AI." data-de="Die LIDx Solutions GmbH ist ein Technologieunternehmen, das digitale Plattformen in den Bereichen Handel, Logistik und KI aufbaut und betreibt.">
+            LIDx Solutions GmbH is a technology company building and operating
+            digital platforms in commerce, logistics and AI.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Platforms" data-de="Plattformen">Platforms</h4>
+          <a href="https://clusterbuy.de" target="_blank" rel="noopener">ClusterBuy</a>
+          <a href="https://loadista.com" target="_blank" rel="noopener">Loadista</a>
+          <a href="https://carelab.ge" target="_blank" rel="noopener">CareLab</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Company" data-de="Unternehmen">Company</h4>
+          <a href="index.html#about" data-en="About" data-de="Über uns">About</a>
+          <a href="index.html#what-we-do" data-en="What We Do" data-de="Was wir tun">What We Do</a>
+          <a href="index.html#partners" data-en="Partners" data-de="Partner">Partners</a>
+          <a href="index.html#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Legal" data-de="Rechtliches">Legal</h4>
+          <a href="impressum.html" data-en="Imprint" data-de="Impressum">Imprint</a>
+          <a href="datenschutz.html" data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</a>
+          <a href="agb.html" data-en="Terms &amp; Conditions" data-de="AGB">Terms &amp; Conditions</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Contact" data-de="Kontakt">Contact</h4>
+          <a href="mailto:info@lidx-solutions.de" data-en="Email us" data-de="E-Mail senden">Email us</a>
+          <a href="index.html#contact" data-en="Get in touch" data-de="Kontakt aufnehmen">Get in touch</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span data-en="© 2026 LIDx Solutions GmbH. All rights reserved." data-de="© 2026 LIDx Solutions GmbH. Alle Rechte vorbehalten.">© 2026 LIDx Solutions GmbH. All rights reserved.</span>
+        <span data-en="Made in Germany." data-de="Made in Germany.">Made in Germany.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script>
+    const langToggle = document.getElementById("langToggle");
+    const translatable = document.querySelectorAll("[data-en]");
+
+    function applyLanguage(lang) {
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("data-lang", lang);
+      translatable.forEach(el => {
+        const value = lang === "de" ? el.getAttribute("data-de") : el.getAttribute("data-en");
+        if (value !== null) el.innerHTML = value;
+      });
+      langToggle.textContent = lang === "de" ? "DE⌄" : "EN⌄";
+    }
+
+    langToggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-lang") || "en";
+      applyLanguage(current === "en" ? "de" : "en");
+    });
+  </script>
+
+</body>
+</html>

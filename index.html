@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LIDx Solutions develops and operates digital platforms across commerce, logistics, software and AI." />
+  <title>LIDx Solutions — We build digital businesses.</title>
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0b0b0c;
+      --text: #111214;
+      --muted: #666a70;
+      --line: #e8e9eb;
+      --white: #ffffff;
+      --clusterbuy: #c2410c;
+      --loadista: #253a4f;
+      --carelab: #466642;
+      --green: #19a866;
+      --blue: #2869dc;
+      --purple: #7b4be2;
+      --max: 1240px;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section[id] {
+      scroll-margin-top: 88px;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
+
+    /* NAVIGATION */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      color: #fff;
+      background: #050505;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav-inner {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: baseline;
+      gap: 10px;
+      white-space: nowrap;
+      letter-spacing: -.02em;
+      font-weight: 800;
+      font-size: 31px;
+    }
+
+    .logo-lid {
+      display: inline-block;
+      font-size: 125%;
+    }
+
+    .logo-x {
+      font-weight: 400;
+      font-size: 72%;
+      display: inline-block;
+      transform: scaleX(1.4);
+    }
+
+    .logo small {
+      font-size: 31px;
+      letter-spacing: -.02em;
+      font-weight: 300;
+      opacity: .8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+      font-size: 13px;
+      color: rgba(255,255,255,.76);
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -9px;
+      height: 1px;
+      background: #fff;
+      transition: right .25s ease;
+    }
+
+    .nav-links a:hover::after {
+      right: 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    .lang {
+      color: rgba(255,255,255,.8);
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      font: inherit;
+      padding: 0;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 760px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 80% 55%, rgba(25,168,102,.12), transparent 27%),
+        radial-gradient(circle at 70% 20%, rgba(40,105,220,.13), transparent 25%),
+        #030303;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      opacity: .22;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: linear-gradient(to right, black, transparent 80%);
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 720px;
+      height: 720px;
+      right: -110px;
+      top: 50%;
+      transform: translateY(-48%);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(35,93,150,.28), transparent 48%),
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,.09), transparent 2%),
+        radial-gradient(circle at 62% 42%, rgba(255,196,75,.15), transparent 2%),
+        radial-gradient(circle at 48% 65%, rgba(255,196,75,.11), transparent 2%);
+      box-shadow: 0 0 100px rgba(32,91,146,.16);
+      border: 1px solid rgba(150,190,220,.12);
+    }
+
+    .hero-glow::before,
+    .hero-glow::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      inset: 12%;
+      border: 1px solid rgba(255,255,255,.07);
+      transform: rotate(24deg) scaleX(1.55);
+    }
+
+    .hero-glow::after {
+      inset: 25%;
+      transform: rotate(-25deg) scaleX(1.8);
+    }
+
+    .network-dot {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #d8a94e;
+      box-shadow: 0 0 12px #d8a94e;
+    }
+
+    .d1 { right: 23%; top: 39%; }
+    .d2 { right: 39%; top: 57%; }
+    .d3 { right: 18%; top: 58%; }
+    .d4 { right: 31%; top: 72%; }
+    .d5 { right: 51%; top: 47%; }
+    .d6 { right: 43%; top: 30%; }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 80px;
+      max-width: 650px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: .24em;
+      font-weight: 650;
+      margin-bottom: 25px;
+      color: rgba(255,255,255,.65);
+    }
+
+    .hero h1 {
+      font-size: clamp(58px, 7vw, 96px);
+      line-height: .95;
+      letter-spacing: -.065em;
+      font-weight: 650;
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 27px;
+    }
+
+    .hero-tags span:not(:last-child)::after {
+      content: "•";
+      margin-left: 9px;
+      color: rgba(255,255,255,.3);
+    }
+
+    .hero-description {
+      max-width: 570px;
+      font-size: 17px;
+      color: rgba(255,255,255,.67);
+      line-height: 1.7;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 9px;
+      border: 1px solid rgba(255,255,255,.3);
+      font-size: 13px;
+      font-weight: 600;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.7);
+    }
+
+    .btn-light {
+      background: white;
+      color: #111;
+      border-color: white;
+    }
+
+    .btn-dark {
+      color: white;
+      background: rgba(255,255,255,.025);
+    }
+
+    .arrow {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    /* GENERAL */
+    section {
+      position: relative;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: .25em;
+      font-weight: 700;
+      color: #73777d;
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 4vw, 55px);
+      line-height: 1.03;
+      letter-spacing: -.045em;
+      font-weight: 650;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 16px;
+      margin-top: 18px;
+    }
+
+    /* PLATFORMS */
+    .platforms {
+      background: #fff;
+    }
+
+    .platforms .section-label {
+      width: fit-content;
+      color: transparent;
+      background: linear-gradient(90deg,
+        var(--clusterbuy) 0 31%,
+        var(--loadista) 38% 64%,
+        var(--carelab) 71% 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 48px;
+    }
+
+    .platform-card {
+      position: relative;
+      min-height: 390px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s ease, box-shadow .3s ease;
+      background: #fff;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 25px 60px rgba(0,0,0,.08);
+    }
+
+    .platform-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+    }
+
+    .platform-card.clusterbuy::before { background: var(--clusterbuy); }
+    .platform-card.loadista::before { background: var(--loadista); }
+    .platform-card.carelab::before { background: var(--carelab); }
+
+    .platform-logo {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .platform-mark {
+      width: 55%;
+      height: 60px;
+      flex: 0 0 55%;
+      display: grid;
+      place-items: center;
+    }
+
+    .platform-mark img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 60px;
+      object-fit: contain;
+      object-position: left center;
+      justify-self: start;
+    }
+
+    .platform-card h3 {
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -.02em;
+    }
+
+    .platform-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .platform-link {
+      margin-top: auto;
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .clusterbuy .platform-link { color: var(--clusterbuy); }
+    .loadista .platform-link { color: var(--loadista); }
+    .carelab .platform-link { color: var(--carelab); }
+
+    .clusterbuy .platform-link {
+      justify-content: space-between;
+    }
+
+    .clusterbuy-claim {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #a4a4a4;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .16em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .clusterbuy-claim .claim-dot {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: var(--clusterbuy);
+    }
+
+    /* CAPABILITIES */
+    .capabilities {
+      background: #f7f7f6;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid #ddd;
+      margin-top: 55px;
+    }
+
+    .capability {
+      padding: 35px 25px 20px;
+      border-right: 1px solid #ddd;
+      min-height: 250px;
+    }
+
+    .capability:last-child {
+      border-right: none;
+    }
+
+    .cap-icon {
+      width: 54px;
+      height: 54px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .cap-icon img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .capability h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      letter-spacing: -.02em;
+    }
+
+    .capability p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* PROCESS */
+    .process {
+      background: #fff;
+    }
+
+    .process-header {
+      text-align: center;
+    }
+
+    .process-header .section-subtitle {
+      margin-inline: auto;
+    }
+
+    .process-line {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: 70px;
+      position: relative;
+    }
+
+    .process-line::before {
+      content: "";
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: #d7d9dc;
+    }
+
+    .step {
+      position: relative;
+      text-align: center;
+      padding: 0 15px;
+    }
+
+    .step-circle {
+      position: relative;
+      z-index: 2;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 23px;
+      border: 1px solid #cfd2d6;
+      border-radius: 50%;
+      background: white;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+    }
+
+    .step-circle img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    .step h3 {
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: .15em;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      max-width: 180px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    /* GLOBAL */
+    .global {
+      background: #fafafa;
+      overflow: hidden;
+    }
+
+    .global-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.4fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .global-copy h2 {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: .98;
+      letter-spacing: -.055em;
+      margin-bottom: 22px;
+    }
+
+    .global-copy p {
+      color: var(--muted);
+      max-width: 470px;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      color: #245dbf;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .map {
+      min-height: 390px;
+      position: relative;
+      background-image:
+        radial-gradient(#d9dbdd 1px, transparent 1px);
+      background-size: 7px 7px;
+      opacity: .9;
+      clip-path: polygon(6% 15%, 19% 8%, 32% 12%, 42% 5%, 52% 15%, 66% 13%, 80% 24%, 94% 33%, 90% 54%, 97% 66%, 82% 74%, 69% 90%, 52% 83%, 38% 93%, 23% 80%, 11% 85%, 3% 64%, 8% 47%, 2% 32%);
+    }
+
+    .route {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, #111, #2869dc, #7b4be2);
+      transform-origin: left center;
+    }
+
+    .route.one {
+      width: 55%;
+      left: 18%;
+      top: 43%;
+      transform: rotate(8deg);
+    }
+
+    .route.two {
+      width: 42%;
+      left: 38%;
+      top: 46%;
+      transform: rotate(16deg);
+    }
+
+    .map-node {
+      position: absolute;
+      z-index: 2;
+      padding: 7px 11px;
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: #111;
+      color: white;
+    }
+
+    .node-germany { left: 15%; top: 34%; }
+    .node-europe { left: 46%; top: 40%; background: var(--blue); }
+    .node-caucasus { right: 9%; top: 51%; background: var(--purple); }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 110px;
+      align-items: start;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(38px, 5vw, 65px);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    .about-text {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .about-text p + p {
+      margin-top: 20px;
+    }
+
+    .about-stat {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 25px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 25px;
+      letter-spacing: -.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 28px 0 0;
+      background: #fff;
+    }
+
+    .cta {
+      min-height: 170px;
+      background: #050505;
+      color: white;
+      border-radius: 14px;
+      padding: 35px 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .cta h2 {
+      font-size: clamp(26px, 4vw, 42px);
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+
+    .btn-green {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+      white-space: nowrap;
+    }
+
+    .btn-green:hover {
+      background: #158d56;
+      border-color: #158d56;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      color: white;
+      margin-top: 28px;
+      padding: 70px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 65px;
+    }
+
+    .footer-brand p {
+      margin-top: 25px;
+      max-width: 280px;
+      color: #7e8085;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer .logo {
+      color: white;
+    }
+
+    .footer-col h4 {
+      color: #777a80;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      margin-bottom: 18px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 12px;
+      color: #d4d5d7;
+      margin-bottom: 11px;
+      transition: color .2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #202124;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #66686d;
+      font-size: 10px;
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* MOBILE */
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 24px;
+        right: 24px;
+        padding: 20px;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 14px;
+        background: rgba(5,5,5,.96);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero {
+        min-height: 720px;
+      }
+
+      .hero-glow {
+        width: 520px;
+        height: 520px;
+        right: -220px;
+        opacity: .75;
+      }
+
+      .platform-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .platform-card {
+        min-height: 330px;
+      }
+
+      .capability-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .capability:nth-child(2) {
+        border-right: none;
+      }
+
+      .process-line {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .process-line::before {
+        top: 36px;
+        bottom: 36px;
+        left: 50%;
+        right: auto;
+        width: 1px;
+        height: auto;
+      }
+
+      .step {
+        background: white;
+        width: 100%;
+      }
+
+      .global-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .map {
+        min-height: 300px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(calc(100% - 34px), var(--max));
+      }
+
+      .nav-inner {
+        height: 76px;
+      }
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .hero-content {
+        padding-top: 55px;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .capability-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .capability {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        min-height: auto;
+        padding: 27px 0;
+      }
+
+      .capability:last-child {
+        border-bottom: none;
+      }
+
+      .about-stat {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .cta {
+        padding: 30px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .buttons {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="LIDx Solutions">
+        <span class="logo-word"><span class="logo-lid">LID</span><span class="logo-x">x</span></span>
+        <small>SOLUTIONS</small>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" data-en="Home" data-de="Home">Home</a>
+        <a href="#platforms" data-en="Platforms" data-de="Plattformen">Platforms</a>
+        <a href="#what-we-do" data-en="What We Do" data-de="Was wir tun">What We Do</a>
+        <a href="#about" data-en="About" data-de="Über uns">About</a>
+        <a href="#partners" data-en="Partners" data-de="Partner">Partners</a>
+        <a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <button class="lang" id="langToggle" type="button" aria-label="Switch language">EN⌄</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-grid"></div>
+      <div class="hero-glow">
+        <span class="network-dot d1"></span>
+        <span class="network-dot d2"></span>
+        <span class="network-dot d3"></span>
+        <span class="network-dot d4"></span>
+        <span class="network-dot d5"></span>
+        <span class="network-dot d6"></span>
+      </div>
+
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="eyebrow" data-en="LIDx Solutions · Germany · 2026" data-de="LIDx Solutions · Deutschland · 2026">LIDx Solutions · Germany · 2026</div>
+
+          <h1 data-en="We build<br />digital businesses." data-de="Wir bauen<br />digitale Unternehmen.">We build<br />digital businesses.</h1>
+
+          <div class="hero-tags">
+            <span data-en="Software" data-de="Software">Software</span>
+            <span data-en="Platforms" data-de="Plattformen">Platforms</span>
+            <span data-en="Commerce" data-de="Handel">Commerce</span>
+            <span data-en="Logistics" data-de="Logistik">Logistics</span>
+            <span data-en="AI" data-de="KI">AI</span>
+          </div>
+
+          <p class="hero-description" data-en="LIDx Solutions develops and operates digital platforms that connect businesses, products and services across borders." data-de="LIDx Solutions entwickelt und betreibt digitale Plattformen, die Unternehmen, Produkte und Dienstleistungen über Grenzen hinweg verbinden.">
+            LIDx Solutions develops and operates digital platforms that
+            connect businesses, products and services across borders.
+          </p>
+
+          <div class="buttons">
+            <a href="#platforms" class="btn btn-light">
+              <span data-en="Explore our platforms" data-de="Unsere Plattformen entdecken">Explore our platforms</span> <span class="arrow">→</span>
+            </a>
+            <a href="#contact" class="btn btn-dark">
+              <span data-en="Get in touch" data-de="Kontakt aufnehmen">Get in touch</span> <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section class="section platforms" id="platforms">
+      <div class="container">
+        <div class="section-label reveal" data-en="Three platforms. One focus." data-de="Drei Plattformen. Ein Fokus.">Three platforms. One focus.</div>
+
+        <div class="platform-grid">
+
+          <article class="platform-card clusterbuy reveal">
+            <div class="platform-logo">
+              <div class="platform-mark">
+                <img src="logos/clusterbuy_logo_2.png" alt="ClusterBuy — Shop more, ship smart" />
+              </div>
+            </div>
+
+            <h3 data-en="Cross-Border Trade Made in Germany" data-de="Grenzüberschreitender Handel aus Deutschland">Cross-Border Trade Made in Germany</h3>
+
+            <p data-en="Cross-border e-commerce for customers in the Caucasus region. We purchase, consolidate and deliver orders through our logistics network." data-de="Grenzüberschreitender E-Commerce für Kunden in der Kaukasusregion. Wir kaufen ein, bündeln Bestellungen und liefern sie über unser Logistiknetzwerk.">
+              Cross-border e-commerce for customers in the Caucasus region.
+              We purchase, consolidate and deliver orders through our logistics network.
+            </p>
+
+            <div class="platform-link">
+              <a class="clusterbuy-claim" href="https://clusterbuy.de" target="_blank" rel="noopener" aria-label="Shop More, Ship Smart">
+                <span class="claim-dot" aria-hidden="true"></span>
+                <span>Shop More</span>
+                <span class="claim-dot" aria-hidden="true"></span>
+                <span>Ship Smart</span>
+                <span class="claim-dot" aria-hidden="true"></span>
+              </a>
+              <a href="https://clusterbuy.de" target="_blank" rel="noopener" aria-label="Visit ClusterBuy">→</a>
+            </div>
+          </article>
+
+          <article class="platform-card loadista reveal">
+            <div class="platform-logo">
+              <div class="platform-mark">
+                <img src="logos/loadista_logo_2.jpg" alt="Loadista" />
+              </div>
+            </div>
+
+            <h3 data-en="Where shipments meet carriers." data-de="Wo Sendungen auf Frachtführer treffen.">Where shipments meet carriers.</h3>
+
+            <p data-en="A digital platform connecting shippers with carriers, couriers and logistics providers. Post shipments, receive offers and ship smarter." data-de="Eine digitale Plattform, die Versender mit Frachtführern, Kurieren und Logistikdienstleistern verbindet. Sendungen einstellen, Angebote erhalten und smarter versenden.">
+              A digital platform connecting shippers with carriers, couriers
+              and logistics providers. Post shipments, receive offers and ship smarter.
+            </p>
+
+            <div class="platform-link">
+              <a href="https://loadista.com" target="_blank" rel="noopener" data-en="Explore Loadista" data-de="Loadista entdecken">Explore Loadista</a>
+              <a href="https://loadista.com" target="_blank" rel="noopener">→</a>
+            </div>
+          </article>
+
+          <article class="platform-card carelab reveal">
+            <div class="platform-logo">
+              <div class="platform-mark">
+                <img src="logos/carelab_logo_2.png" alt="CareLab — Personal care, made simple" />
+              </div>
+            </div>
+
+            <h3 data-en="AI-powered personal care guidance." data-de="KI-gestützte Beratung für persönliche Pflege.">AI-powered personal care guidance.</h3>
+
+            <p data-en="Answer a few simple questions and our AI recommends personal care products for you. No registration. No personal data required." data-de="Beantworten Sie ein paar einfache Fragen und unsere KI empfiehlt Ihnen passende Pflegeprodukte. Keine Registrierung. Keine persönlichen Daten erforderlich.">
+              Answer a few simple questions and our AI recommends personal
+              care products for you. No registration. No personal data required.
+            </p>
+
+            <div class="platform-link">
+              <a href="https://carelab.ge" target="_blank" rel="noopener" data-en="Try CareLab" data-de="CareLab testen">Try CareLab</a>
+              <a href="https://carelab.ge" target="_blank" rel="noopener">→</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="section capabilities" id="what-we-do">
+      <div class="container">
+        <div class="section-label reveal" data-en="What we do" data-de="Was wir tun">What we do</div>
+        <h2 class="section-title reveal" data-en="We build and operate<br />digital businesses." data-de="Wir bauen und betreiben<br />digitale Unternehmen.">We build and operate<br />digital businesses.</h2>
+
+        <div class="capability-grid">
+
+          <div class="capability reveal">
+            <div class="cap-icon" aria-hidden="true">
+              <img src="logos/Digital%20Plattforms.svg" alt="" />
+            </div>
+            <h3 data-en="Digital Platforms" data-de="Digitale Plattformen">Digital Platforms</h3>
+            <p data-en="We develop and operate scalable platforms that connect different sides of a market." data-de="Wir entwickeln und betreiben skalierbare Plattformen, die unterschiedliche Marktseiten miteinander verbinden.">
+              We develop and operate scalable platforms that connect different
+              sides of a market.
+            </p>
+          </div>
+
+          <div class="capability reveal">
+            <div class="cap-icon" aria-hidden="true">
+              <img src="logos/ecommerce.svg" alt="" />
+            </div>
+            <h3 data-en="E-Commerce" data-de="E-Commerce">E-Commerce</h3>
+            <p data-en="Cross-border commerce, product sourcing, payments and customer experience." data-de="Grenzüberschreitender Handel, Produktbeschaffung, Zahlungen und Kundenerlebnis.">
+              Cross-border commerce, product sourcing, payments and customer experience.
+            </p>
+          </div>
+
+          <div class="capability reveal">
+            <div class="cap-icon" aria-hidden="true">
+              <img src="logos/Logistics.svg" alt="" />
+            </div>
+            <h3 data-en="Logistics" data-de="Logistik">Logistics</h3>
+            <p data-en="Shipping, fulfillment and logistics solutions that make global trade smarter." data-de="Versand-, Fulfillment- und Logistiklösungen, die den globalen Handel smarter machen.">
+              Shipping, fulfillment and logistics solutions that make global trade smarter.
+            </p>
+          </div>
+
+          <div class="capability reveal">
+            <div class="cap-icon" aria-hidden="true">
+              <img src="logos/ai_solutions.svg" alt="" />
+            </div>
+            <h3 data-en="AI Solutions" data-de="KI-Lösungen">AI Solutions</h3>
+            <p data-en="AI-powered applications that provide intelligent recommendations and insights." data-de="KI-gestützte Anwendungen, die intelligente Empfehlungen und Einblicke liefern.">
+              AI-powered applications that provide intelligent recommendations and insights.
+            </p>
+          </div>
+
+          <div class="capability reveal">
+            <div class="cap-icon" aria-hidden="true">
+              <img src="logos/soft_tech.svg" alt="" />
+            </div>
+            <h3 data-en="Software &amp; Technology" data-de="Software &amp; Technologie">Software &amp; Technology</h3>
+            <p data-en="Robust software, APIs and integrations that power our platforms and partners." data-de="Robuste Software, APIs und Integrationen, die unsere Plattformen und Partner antreiben.">
+              Robust software, APIs and integrations that power our platforms and partners.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section process">
+      <div class="container">
+        <div class="process-header">
+          <div class="section-label reveal" data-en="From idea to operating business" data-de="Von der Idee zum laufenden Unternehmen">From idea to operating business</div>
+          <h2 class="section-title reveal" data-en="We build. We operate. We scale." data-de="Wir bauen. Wir betreiben. Wir skalieren.">We build. We operate. We scale.</h2>
+          <p class="section-subtitle reveal" data-en="We turn opportunities into digital products and products into operating businesses." data-de="Wir verwandeln Chancen in digitale Produkte und Produkte in laufende Unternehmen.">
+            We turn opportunities into digital products and products into operating businesses.
+          </p>
+        </div>
+
+        <div class="process-line">
+
+          <div class="step reveal">
+            <div class="step-circle" aria-hidden="true">
+              <img src="logos/idea.svg" alt="" />
+            </div>
+            <h3 data-en="Idea" data-de="Idee">Idea</h3>
+            <p data-en="We identify opportunities and solve real problems." data-de="Wir erkennen Chancen und lösen echte Probleme.">We identify opportunities and solve real problems.</p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-circle" aria-hidden="true">
+              <img src="logos/Build.svg" alt="" />
+            </div>
+            <h3 data-en="Build" data-de="Bauen">Build</h3>
+            <p data-en="We develop the technology and build the product." data-de="Wir entwickeln die Technologie und bauen das Produkt.">We develop the technology and build the product.</p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-circle" aria-hidden="true">
+              <img src="logos/launch.svg" alt="" />
+            </div>
+            <h3 data-en="Launch" data-de="Start">Launch</h3>
+            <p data-en="We launch the platform and attract users." data-de="Wir starten die Plattform und gewinnen Nutzer.">We launch the platform and attract users.</p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-circle" aria-hidden="true">
+              <img src="logos/operate.svg" alt="" />
+            </div>
+            <h3 data-en="Operate" data-de="Betreiben">Operate</h3>
+            <p data-en="We run the business and optimize continuously." data-de="Wir führen das Unternehmen und optimieren kontinuierlich.">We run the business and optimize continuously.</p>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-circle" aria-hidden="true">
+              <img src="logos/scale.svg" alt="" />
+            </div>
+            <h3 data-en="Scale" data-de="Skalieren">Scale</h3>
+            <p data-en="We scale what works and expand to new markets." data-de="Wir skalieren, was funktioniert, und erschließen neue Märkte.">We scale what works and expand to new markets.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOBAL -->
+    <section class="section global" id="partners">
+      <div class="container">
+        <div class="global-grid">
+
+          <div class="global-copy">
+            <div class="section-label reveal" data-en="Global outlook" data-de="Globale Ausrichtung">Global outlook</div>
+
+            <h2 class="reveal" data-en="Built in Germany.<br />Designed for<br />international markets." data-de="Gebaut in Deutschland.<br />Konzipiert für<br />internationale Märkte.">
+              Built in Germany.<br />
+              Designed for<br />
+              international markets.
+            </h2>
+
+            <p class="reveal" data-en="We connect Germany, Europe and the Caucasus region through technology, commerce, logistics and strong partnerships. Our platforms are built to operate across borders and evolve into new markets." data-de="Wir verbinden Deutschland, Europa und die Kaukasusregion durch Technologie, Handel, Logistik und starke Partnerschaften. Unsere Plattformen sind darauf ausgelegt, grenzüberschreitend zu agieren und sich in neue Märkte weiterzuentwickeln.">
+              We connect Germany, Europe and the Caucasus region through
+              technology, commerce, logistics and strong partnerships.
+              Our platforms are built to operate across borders and evolve
+              into new markets.
+            </p>
+
+            <a href="#about" class="text-link reveal">
+              <span data-en="Learn more about LIDx" data-de="Mehr über LIDx erfahren">Learn more about LIDx</span> <span>→</span>
+            </a>
+          </div>
+
+          <div class="map reveal" aria-label="International markets illustration">
+            <div class="map-node node-germany" data-en="Germany" data-de="Deutschland">Germany</div>
+            <div class="map-node node-europe" data-en="Europe" data-de="Europa">Europe</div>
+            <div class="map-node node-caucasus" data-en="Caucasus Region" data-de="Kaukasusregion">Caucasus Region</div>
+            <div class="route one"></div>
+            <div class="route two"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-copy">
+            <div class="section-label reveal" data-en="About LIDx" data-de="Über LIDx">About LIDx</div>
+            <h2 class="reveal" data-en="Technology is<br />only the beginning." data-de="Technologie ist<br />erst der Anfang.">
+              Technology is<br />
+              only the beginning.
+            </h2>
+          </div>
+
+          <div class="about-text reveal">
+            <p data-en="LIDx Solutions GmbH is a Germany-based technology company focused on developing, operating and scaling digital businesses." data-de="Die LIDx Solutions GmbH ist ein in Deutschland ansässiges Technologieunternehmen, das sich auf die Entwicklung, den Betrieb und die Skalierung digitaler Unternehmen spezialisiert hat.">
+              LIDx Solutions GmbH is a Germany-based technology company
+              focused on developing, operating and scaling digital businesses.
+            </p>
+
+            <p data-en="Our activities span software development, digital platforms, e-commerce, logistics, AI-powered services and technology-driven business models." data-de="Unsere Tätigkeiten umfassen Softwareentwicklung, digitale Plattformen, E-Commerce, Logistik, KI-gestützte Dienstleistungen und technologiegetriebene Geschäftsmodelle.">
+              Our activities span software development, digital platforms,
+              e-commerce, logistics, AI-powered services and technology-driven
+              business models.
+            </p>
+
+            <p data-en="We build our own platforms and combine technology, operations and partnerships to turn ideas into scalable businesses." data-de="Wir bauen unsere eigenen Plattformen und verbinden Technologie, Betrieb und Partnerschaften, um Ideen in skalierbare Unternehmen zu verwandeln.">
+              We build our own platforms and combine technology, operations
+              and partnerships to turn ideas into scalable businesses.
+            </p>
+
+            <div class="about-stat">
+              <div class="stat">
+                <strong>03</strong>
+                <span data-en="Active platforms" data-de="Aktive Plattformen">Active platforms</span>
+              </div>
+              <div class="stat">
+                <strong>05</strong>
+                <span data-en="Core capabilities" data-de="Kernkompetenzen">Core capabilities</span>
+              </div>
+              <div class="stat">
+                <strong>∞</strong>
+                <span data-en="More to come" data-de="Mehr folgt">More to come</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+      <div class="container">
+        <div class="cta reveal">
+          <h2 data-en="Let's build the future together." data-de="Lassen Sie uns gemeinsam die Zukunft gestalten.">Let's build the future together.</h2>
+
+          <a class="btn btn-light" href="mailto:info@lidx-solutions.de">
+            <span data-en="Contact LIDx Solutions" data-de="LIDx Solutions kontaktieren">Contact LIDx Solutions</span> <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-word"><span class="logo-lid">LID</span><span class="logo-x">x</span></span>
+            <small>SOLUTIONS</small>
+          </div>
+
+          <p data-en="LIDx Solutions GmbH is a technology company building and operating digital platforms in commerce, logistics and AI." data-de="Die LIDx Solutions GmbH ist ein Technologieunternehmen, das digitale Plattformen in den Bereichen Handel, Logistik und KI aufbaut und betreibt.">
+            LIDx Solutions GmbH is a technology company building and operating
+            digital platforms in commerce, logistics and AI.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Platforms" data-de="Plattformen">Platforms</h4>
+          <a href="https://clusterbuy.de" target="_blank" rel="noopener">ClusterBuy</a>
+          <a href="https://loadista.com" target="_blank" rel="noopener">Loadista</a>
+          <a href="https://carelab.ge" target="_blank" rel="noopener">CareLab</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Company" data-de="Unternehmen">Company</h4>
+          <a href="#about" data-en="About" data-de="Über uns">About</a>
+          <a href="#what-we-do" data-en="What We Do" data-de="Was wir tun">What We Do</a>
+          <a href="#partners" data-en="Partners" data-de="Partner">Partners</a>
+          <a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Legal" data-de="Rechtliches">Legal</h4>
+          <a href="impressum.html" data-en="Imprint" data-de="Impressum">Imprint</a>
+          <a href="datenschutz.html" data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</a>
+          <a href="agb.html" data-en="Terms &amp; Conditions" data-de="AGB">Terms &amp; Conditions</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Contact" data-de="Kontakt">Contact</h4>
+          <a href="mailto:info@lidx-solutions.de" data-en="Email us" data-de="E-Mail senden">Email us</a>
+          <a href="#contact" data-en="Get in touch" data-de="Kontakt aufnehmen">Get in touch</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span data-en="© 2026 LIDx Solutions GmbH. All rights reserved." data-de="© 2026 LIDx Solutions GmbH. Alle Rechte vorbehalten.">© 2026 LIDx Solutions GmbH. All rights reserved.</span>
+        <span data-en="Made in Germany." data-de="Made in Germany.">Made in Germany.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Language toggle
+    const langToggle = document.getElementById("langToggle");
+    const translatable = document.querySelectorAll("[data-en]");
+
+    function applyLanguage(lang) {
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("data-lang", lang);
+      translatable.forEach(el => {
+        const value = lang === "de" ? el.getAttribute("data-de") : el.getAttribute("data-en");
+        if (value !== null) el.innerHTML = value;
+      });
+      langToggle.textContent = lang === "de" ? "DE⌄" : "EN⌄";
+    }
+
+    langToggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-lang") || "en";
+      applyLanguage(current === "en" ? "de" : "en");
+    });
+
+    // Mobile navigation
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuBtn.textContent = navLinks.classList.contains("open") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
